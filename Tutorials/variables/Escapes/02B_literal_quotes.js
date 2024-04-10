@@ -2,20 +2,15 @@
 // 02B_literal_quotes.js
 // ESCAPING literal quotes
 
+// WAY 1: use alternate quotation marks
 
-// var mySentence = "Someone once said, "Honesty is the best Policy""
+var mySentence1 = 'Someone once said, "Honesty is the best Policy"';
 
-// WAY 1
-//      use alternate quotation marks
+// WAY 2: Add "\" before quotes
 
-var mySentence = 'Someone once said, "Honesty is the best Policy"'
+var mySentence2 = "Someone once said, \"Honesty is the best Policy\"";
 
-// WAY 2
-//      Add "\" before quotes
+// WAY 3: use backtick (`)
 
-var mySentence = "Someone once said, \"Honesty is the best Policy\""
+var mySentence3 = `Someone once said, "Honesty is the best Policy"`;
 
-// WAY 3
-//      use "`"
-
-var mySentence = `"Someone once said, "Honesty is the best Policy""`
