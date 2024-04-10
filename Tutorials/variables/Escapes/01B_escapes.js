@@ -13,3 +13,4 @@ CODE    OUTPUT
 // Examples
 
 var escapedStr = "Some sentence\nNext Sentence\tTabbed sentence"
+console.log(escapedStr)
