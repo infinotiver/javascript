@@ -4,4 +4,4 @@ function function_name(){
     console.log("Hello World");
 }
 
-function_name();
+function_name(); // Output: Hello World
