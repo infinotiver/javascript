@@ -48,6 +48,7 @@ let a = 15;
 let b = 1;
 let c = 9;
 let d = 6;
+let e = 13
 
 /**
  * Recommended way to perform compound assignment
@@ -71,3 +72,6 @@ console.log(c)
  */
 d /= 2; 
 console.log(d)
+
+e %= d;
+console.log(e)
