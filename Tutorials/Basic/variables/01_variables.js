@@ -54,18 +54,20 @@ let d = 6;
  * Add 5 to the value of a
  */
 a += 5;
+console.log(a)
 
 /**
  * Subtract the value of b from 10 and assign the result to b
  */
-b = -10; // -= also works
-
+b -= 10; 
+console.log(b)
 /**
  * Multiply the value of c by 5 and assign the result to c
  */
-c *= 5; // or =*
-
+c *= 5; 
+console.log(c)
 /**
  * Divide the value of d by 2 and assign the result to d
  */
-d /= 2; // or =/
+d /= 2; 
+console.log(d)
