@@ -20,6 +20,13 @@ var some_var_124 = 124;
 // Assign the value of 'some_var_124' to the 'something' variable
 var something = some_var_124;
 
+// Declaring multiple variables
+var languageName= 'JavaScript', nodeVersion = 20.12, isDone = true;
+
+// Declaring multiple variables in multiple lines (for readability)
+var languageName = 'Javascript',
+nodeVersion = 20.12,
+isDone = true
 // Log the value of 'something' to the console
 console.log(something); // Equivalent to print in Python
 
