@@ -18,6 +18,14 @@
  * Data types are case-sensitive in JavaScript.
  */
 
+/*
+The let Keyword
+ES6 introduces the new let keyword for declaring variables. Prior to ES6, the only way to declare a variable in JavaScript was the var keyword. 
+
+* Variables declared with the var keyword are function-scoped & can be hoisted at the top within its scope
+* Variables declared with let keyword are block-scoped ({}) & they are not hoisted
+*/
+
 // Declare and assign a variable named myName with a string value "Someone"
 let myName = "Someone";
 
