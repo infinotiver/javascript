@@ -2,7 +2,7 @@ function FunctionWithArguments(argument1, argument2) {
     console.log(argument1,argument2)
 }
 
-FunctionWithArguments(1,5)
+FunctionWithArguments(1,5) // Output: 1 5
 
 function ConcatenatedStrings(firstString, secondString) {
     // Concatenating the two arguments and logging the result
