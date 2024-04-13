@@ -62,15 +62,16 @@ const tableOfContents = generateTableOfContents(directory);
 
 const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
 console.log(readmePath);
-let readmeContent = fs.readFileSync(readmePath, 'utf8');
-console.log(readmeContent);
+
 const tocHeader = '## Table of Contents';
 const tocMarker = '';
 const updatedReadmeContent = readmeContent.replace(tocMarker, `${tocHeader}\n\n${tableOfContents}\n\n${tocMarker}`);
 console.log(updatedReadmeContent);
 try {
-  fs.writeFileSync(readmePath, updatedReadmeContent);
+  fs.writeFileSync(readmePath, updatedReadmeContent, { encoding: 'utf8' });
+  console.log("README file updated successfully!");
 } catch (error) {
-  console.error("Error writing README file:", error);
+  console.error("Error writing to README file:", error);
+  // Handle the error (e.g., fail the job, log a message)
 }
 
