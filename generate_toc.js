@@ -67,5 +67,9 @@ console.log(readmeContent);
 const tocHeader = '## Table of Contents';
 const tocMarker = '';
 const updatedReadmeContent = readmeContent.replace(tocMarker, `${tocHeader}\n\n${tableOfContents}\n\n${tocMarker}`);
+try {
+  fs.writeFileSync(readmePath, updatedReadmeContent);
+} catch (error) {
+  console.error("Error reading README file:", error);
+}
 
-fs.writeFileSync(readmePath, updatedReadmeContent);
