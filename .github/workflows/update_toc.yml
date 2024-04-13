@@ -3,10 +3,10 @@ name: Update Table of Contents
 on:
   push:
     branches:
-      - main
+      - auto_gen_toc
   pull_request:
     branches:
-      - main
+      - auto_gen_toc
 jobs:
   update_table_of_contents:
     runs-on: ubuntu-latest
