@@ -61,8 +61,9 @@ const directory = 'Tutorials';
 const tableOfContents = generateTableOfContents(directory);
 
 const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
+console.log(readmePath);
 let readmeContent = fs.readFileSync(readmePath, 'utf8');
-
+console.log(readmeContent);
 const tocHeader = '## Table of Contents';
 const tocMarker = '';
 const updatedReadmeContent = readmeContent.replace(tocMarker, `${tocHeader}\n\n${tableOfContents}\n\n${tocMarker}`);
