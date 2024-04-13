@@ -71,6 +71,6 @@ console.log(updatedReadmeContent);
 try {
   fs.writeFileSync(readmePath, updatedReadmeContent);
 } catch (error) {
-  console.error("Error reading README file:", error);
+  console.error("Error writing README file:", error);
 }
 
