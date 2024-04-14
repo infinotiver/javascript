@@ -64,7 +64,7 @@ const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
 console.log(readmePath);
 let readmeContent = fs.readFileSync(readmePath, 'utf8');
 const tocHeader = '## Table of Contents';
-const tocMarker = '';
+const tocMarker = '<!-- TABLE_OF_CONTENTS_MARKER -->';
 const updatedReadmeContent = readmeContent.replace(tocMarker, `${tocHeader}\n\n${tableOfContents}\n\n${tocMarker}`);
 console.log("Update content ",updatedReadmeContent);
 console.log("Content before TOC:", updatedReadmeContent.slice(0, 100)); // First 100 characters
