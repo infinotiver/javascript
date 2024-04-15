@@ -39,11 +39,18 @@ let readmeContent = fs.readFileSync(readmePath, 'utf8');
 const tocHeader = '## Table of Contents';
 const tocMarker = '<!-- INSERT_TOC_HERE -->'; // Unique marker to indicate where the TOC should be inserted
 const updatedReadmeContent = `${readmeContent}\n\n${tocHeader}\n\n${tocMarker}\n\n${tableOfContents}\n\n`;
-console.log(updatedReadmeContent);
-try {
-    const updatedContent = readmeContent.replace(tocMarker, tableOfContents);
+console.log("Updated content\n", updatedReadmeContent, "\n");
+
+// Find the first occurrence of the tocMarker in the README content
+const markerIndex = readmeContent.indexOf(tocMarker);
+
+if (markerIndex !== -1) {
+    // Replace the first occurrence of the tocMarker with the generated table of contents
+    const updatedContent = readmeContent.slice(0, markerIndex) + tableOfContents + readmeContent.slice(markerIndex + tocMarker.length);
+
+    // Write the updated content back to the README file
     fs.writeFileSync(readmePath, updatedContent, { encoding: 'utf8' });
     console.log("README file updated successfully!");
-} catch (error) {
-    console.error("Error writing to README file:", error);
+} else {
+    console.error("Unable to find the tocMarker in the README content. Update failed.");
 }
