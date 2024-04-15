@@ -66,11 +66,10 @@ const updatedReadmeContent = `${readmeContent}\n\n${tocHeader}\n\n${tableOfConte
 
 console.log("Table of Contents\n\n ",updatedReadmeContent);
 console.log("Content before TOC:\n\n", updatedReadmeContent.slice(0, 100)); // First 100 characters
-console.log("Updated TOC content:\n\n", updatedReadmeContent.slice(updatedReadmeContent.indexOf(tocHeader), updatedReadmeContent.indexOf(tocMarker, updatedReadmeContent.indexOf(tocHeader) + 1))); // Extract TOC section
 console.log("Content after TOC:\n\n", updatedReadmeContent.slice(-100)); // Last 100 characters
 
 try {
-  fs.writeFileSync(readmePath, updatedReadmeContent, { encoding: 'utf8' });
+  fs.writeFileSync(readmePath, await updatedReadmeContent, { encoding: 'utf8' });
   console.log("README file updated successfully!");
 } catch (error) {
   console.error("Error writing to README file:", error);
