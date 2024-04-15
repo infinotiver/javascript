@@ -2,56 +2,32 @@ const fs = require('fs');
 const path = require('path');
 
 function generateTableOfContents(directory) {
-  // Initialize the table of contents with an empty string
-  let tableOfContents = "";
+    // Initialize the table of contents with an empty string
+    let tableOfContents = "";
 
-  /**
-   * Traverses the directory recursively and generates the table of contents.
-   * @param {string} currentPath - The current path being traversed.
-   * @param {number} depth - The depth of the current path.
-   */
-  function traverseDirectory(currentPath, depth) {
+    function traverseDirectory(currentPath, depth) {
+        const files = fs.readdirSync(currentPath);
 
-    // Get the files in the current directory
-    const files = fs.readdirSync(currentPath);
+        for (const file of files) {
+            const filePath = path.join(currentPath, file);
+            const stats = fs.statSync(filePath);
 
-    // Traverse each file in the directory
-    for (const file of files) {
-      // Get the full path of the file
-      const filePath = path.join(currentPath, file);
-
-      // Get the stats of the file
-      const stats = fs.statSync(filePath);
-
-      // If the file is a directory, generate the table of contents recursively
-      if (stats.isDirectory()) {
-        // Capitalize the first letter of the directory name
-        const folderName = file.charAt(0).toUpperCase() + file.slice(1);
-
-        console.log(`Adding folder to TOC: ${folderName}`); // Log added folder
-
-        // Add the folder name to the table of contents with appropriate indentation
-        tableOfContents += `${" ".repeat(depth)}- ${folderName}\n`;
-
-        // Recursively traverse the directory
-        traverseDirectory(filePath, depth + 1);
-      } else if (file.endsWith(".js")) {
-        // Get the absolute path of the file
-        const absolutePath = path.join(directory, filePath);
-
-        console.log(`Adding JS file to TOC: ${file} - ${absolutePath}`); // Log added JS file
-
-        // Add a link to the file in the table of contents with appropriate indentation
-        tableOfContents += `${" ".repeat(depth)}- [${file}](${absolutePath})\n`;
-      }
+            if (stats.isDirectory()) {
+                const folderName = file.charAt(0).toUpperCase() + file.slice(1);
+                console.log(`Adding folder to TOC: ${folderName}`);
+                tableOfContents += `${" ".repeat(depth)}- ${folderName}\n`;
+                traverseDirectory(filePath, depth + 1);
+            } else if (file.endsWith(".js")) {
+                const absolutePath = path.join(directory, filePath);
+                console.log(`Adding JS file to TOC: ${file} - ${absolutePath}`);
+                tableOfContents += `${" ".repeat(depth)}- [${file}](${absolutePath})\n`;
+            }
+        }
     }
-  }
 
-  // Start traversing the given directory
-  traverseDirectory(directory, 0);
+    traverseDirectory(directory, 0);
 
-  // Return the generated table of contents
-  return tableOfContents;
+    return tableOfContents;
 }
 
 const directory = 'Tutorials';
@@ -61,21 +37,13 @@ const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
 console.log(readmePath);
 let readmeContent = fs.readFileSync(readmePath, 'utf8');
 const tocHeader = '## Table of Contents';
-const tocMarker = '';
-const updatedReadmeContent = `${readmeContent}\n\n${tocHeader}\n\n${tableOfContents}\n\n${tocMarker}`;
-
-console.log("Table of Contents\n\n ",updatedReadmeContent);
-console.log("Content before TOC:\n\n", updatedReadmeContent.slice(0, 100)); // First 100 characters
-console.log("Content after TOC:\n\n", updatedReadmeContent.slice(-100)); // Last 100 characters
+const tocMarker = '<!-- INSERT_TOC_HERE -->'; // Unique marker to indicate where the TOC should be inserted
+const updatedReadmeContent = `${readmeContent}\n\n${tocHeader}\n\n${tocMarker}\n\n${tableOfContents}\n\n`;
+console.log(updatedReadmeContent);
 try {
-  fs.writeFile(readmePath, updatedReadmeContent, { encoding: 'utf8' }, (err) => {
-    if (err) {
-      console.error("Error writing to README file:", err);
-    } else {
-      console.log("README file updated successfully!");
-    }
-  });
+    const updatedContent = readmeContent.replace(tocMarker, tableOfContents);
+    fs.writeFileSync(readmePath, updatedContent, { encoding: 'utf8' });
+    console.log("README file updated successfully!");
 } catch (error) {
-  console.error("Error:", error);
+    console.error("Error writing to README file:", error);
 }
-
