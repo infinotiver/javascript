@@ -67,11 +67,15 @@ const updatedReadmeContent = `${readmeContent}\n\n${tocHeader}\n\n${tableOfConte
 console.log("Table of Contents\n\n ",updatedReadmeContent);
 console.log("Content before TOC:\n\n", updatedReadmeContent.slice(0, 100)); // First 100 characters
 console.log("Content after TOC:\n\n", updatedReadmeContent.slice(-100)); // Last 100 characters
-
 try {
-  fs.writeFile(readmePath, updatedReadmeContent, { encoding: 'utf8' });
-  console.log("README file updated successfully!");
+  fs.writeFile(readmePath, updatedReadmeContent, { encoding: 'utf8' }, (err) => {
+    if (err) {
+      console.error("Error writing to README file:", err);
+    } else {
+      console.log("README file updated successfully!");
+    }
+  });
 } catch (error) {
-  console.error("Error writing to README file:", error);
-  // Handle the error (e.g., fail the job, log a message)
+  console.error("Error:", error);
 }
+
