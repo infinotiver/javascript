@@ -62,7 +62,8 @@ console.log(readmePath);
 let readmeContent = fs.readFileSync(readmePath, 'utf8');
 const tocHeader = '## Table of Contents';
 const tocMarker = '';
-const updatedReadmeContent = readmeContent.replace(tocMarker, `${tocHeader}\n\n${tableOfContents}\n\n${tocMarker}`);
+const updatedReadmeContent = `${readmeContent}\n\n${tocHeader}\n\n${tableOfContents}\n\n${tocMarker}`;
+
 console.log("Table of Contents\n\n ",updatedReadmeContent);
 console.log("Content before TOC:\n\n", updatedReadmeContent.slice(0, 100)); // First 100 characters
 console.log("Updated TOC content:\n\n", updatedReadmeContent.slice(updatedReadmeContent.indexOf(tocHeader), updatedReadmeContent.indexOf(tocMarker, updatedReadmeContent.indexOf(tocHeader) + 1))); // Extract TOC section
