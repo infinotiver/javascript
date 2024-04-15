@@ -69,7 +69,7 @@ console.log("Content before TOC:\n\n", updatedReadmeContent.slice(0, 100)); // F
 console.log("Content after TOC:\n\n", updatedReadmeContent.slice(-100)); // Last 100 characters
 
 try {
-  fs.writeFileSync(readmePath, await updatedReadmeContent, { encoding: 'utf8' });
+  fs.writeFile(readmePath, updatedReadmeContent, { encoding: 'utf8' });
   console.log("README file updated successfully!");
 } catch (error) {
   console.error("Error writing to README file:", error);
