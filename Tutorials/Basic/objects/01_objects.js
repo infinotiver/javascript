@@ -39,3 +39,36 @@ for (let key in person) {
 // name: John
 // age: 35
 // occupation: Developer
+
+// Property naming rules in JavaScript
+/*It is not necessary to put quotation marks in keys of JavaScript objects, unless the key is not a valid identifier (e.g., it contains spaces or it is a reserved word). Quotes can be omitted if the property name is a numeric literal or a valid identifier name. Here are some examples:*/
+
+// Valid identifier name as key (no quotes needed):
+var someObject = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30
+};
+
+// Numeric literal as key (no quotes needed):
+var someObject = {
+  1: "one",
+  2: "two",
+  3: "three"
+};
+
+// Key with spaces or special characters (requires quotes):
+var someObject = {
+  "first name": "John",
+  "last name": "Doe",
+  "age in years": 30
+};
+
+// Key as a reserved word (requires quotes):
+var someObject = {
+  "for": "loop",
+  "if": "condition",
+  "break": "statement"
+};
+
+/* In general, it is a good practice to use valid identifier names as keys and avoid using spaces or special characters that would require quotes. This makes the code more readable and maintainable. */
