@@ -23,3 +23,8 @@ jobs:
       - name: Generate Table of Contents
         run: |
           node generate_toc.js
+          git config --local user.email "88645086+infinotiver@users.noreply.github.com"
+          git config --local user.name "infinotiver"
+          git add README.md
+          git commit -m "Update table of contents in README"
+          git push
