@@ -44,6 +44,7 @@ const markerIndex = readmeContent.indexOf(tocMarker);
 if (markerIndex !== -1) {
     // Insert the generated table of contents below the tocMarker
     const updatedContent = readmeContent.slice(0, markerIndex + tocMarker.length) + '\n\n' + tableOfContents + readmeContent.slice(markerIndex + tocMarker.length);
+    console.log(updatedContent);
 
     // Write the updated content back to the README file using writeFile
     fs.writeFile(readmePath, updatedContent, { encoding: 'utf8' }, (err) => {
