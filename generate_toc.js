@@ -14,12 +14,10 @@ function generateTableOfContents(directory) {
 
             if (stats.isDirectory()) {
                 const folderName = file.charAt(0).toUpperCase() + file.slice(1);
-                console.log(`Adding folder to TOC: ${folderName}`);
                 tableOfContents += `${" ".repeat(depth)}- ${folderName}\n`;
                 traverseDirectory(filePath, depth + 1);
             } else if (file.endsWith(".js")) {
                 const absolutePath = path.join(directory, filePath);
-                console.log(`Adding JS file to TOC: ${file} - ${absolutePath}`);
                 tableOfContents += `${" ".repeat(depth)}- [${file}](${absolutePath})\n`;
             }
         }
@@ -52,6 +50,10 @@ if (markerIndex !== -1) {
             console.error("Error writing to README file:", err);
         } else {
             console.log("README file updated successfully!");
+            // Commit the changes using Git
+            execSync('git add README.md');
+            execSync('git commit -m "Update table of contents in README"');
+            console.log("Changes committed successfully!");
         }
     });
 } else {
