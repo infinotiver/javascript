@@ -50,10 +50,7 @@ if (markerIndex !== -1) {
             console.error("Error writing to README file:", err);
         } else {
             console.log("README file updated successfully!");
-            // Commit the changes using Git
-            execSync('git add README.md');
-            execSync('git commit -m "Update table of contents in README"');
-            console.log("Changes committed successfully!");
+
         }
     });
 } else {
