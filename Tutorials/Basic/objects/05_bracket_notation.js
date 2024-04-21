@@ -42,3 +42,22 @@ console.log(person.firstName); // Output: Jane
 property = 'age';
 person[property] = 35;
 console.log(person.age); // Output: 35
+
+var movie = {
+  title : "Bahubali",
+  director: "S.S. Rajamouli",
+  year: 2010
+}
+
+movie["year"] = 2019
+console.log(movie.year) // Output: 2019
+// Adding Object Properties with Bracket Notation
+/* You can also use bracket notation to add new properties to an object. */
+var person = {
+  name: "John",
+  age: 10
+}
+
+console.log(person.gender) // Output: undefined
+person["gender"] = "male"
+console.log(person.gender) // Output: male
