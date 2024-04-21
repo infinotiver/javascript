@@ -18,7 +18,7 @@ function generateTableOfContents(directory) {
                 traverseDirectory(filePath, depth + 1);
             } else if (file.endsWith(".js")) {
                 const absolutePath = path.join(directory, filePath);
-                tableOfContents += `${" ".repeat(depth)}- [${file}](${absolutePath})\n`;
+                tableOfContents += `${"     ".repeat(depth)}- [${file}](${absolutePath})\n`;
             }
         }
     }
