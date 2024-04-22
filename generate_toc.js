@@ -44,8 +44,9 @@ const startIndex = readmeContent.indexOf(startMarker);
 const endIndex = readmeContent.indexOf(endMarker);
 
 if (startIndex !== -1 && endIndex !== -1) {
-    // Overwrite the content between the start and end markers with the generated table of contents
-    const updatedContent = readmeContent.slice(0, startIndex) + tableOfContents + readmeContent.slice(endIndex + endMarker.length);
+    // Insert the generated table of contents between the start and end markers
+    const updatedContent = readmeContent.slice(0, startIndex) + startMarker + '\n' + tableOfContents + '\n' + endMarker + readmeContent.slice(endIndex + endMarker.length);
+
 
     // Write the updated content back to the README file using writeFile
     fs.writeFile(readmePath, updatedContent, { encoding: 'utf8' }, (err) => {
