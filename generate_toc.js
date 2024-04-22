@@ -31,8 +31,8 @@ function generateTableOfContents(directory, depth = 0) {
             if (stats.isDirectory()) {
                 // Capitalize the first letter of the directory name and add it to the table of contents
                 const folderName = file.charAt(0).toUpperCase() + file.slice(1);
-                console.log(`Adding folder to TOC: ${folderName}`);
-                tableOfContents += `${" ".repeat(depth * 2)}- ${folderName}\n`;
+                const relativePath = path.relative(directory, filePath).replace(/\\/g, "/");
+                tableOfContents += `${" ".repeat(depth * 2)}- [${folderName}](${relativePath})\n`;
 
                 // Recursively traverse the directory
                 traverseDirectory(filePath, depth + 1);
@@ -43,7 +43,6 @@ function generateTableOfContents(directory, depth = 0) {
                 const relativePath = path.relative(directory, filePath).replace(/\\/g, "/");
 
                 // Add a link to the file in the table of contents
-                console.log(`Adding JS file to TOC: ${file} - ${relativePath}`);
                 tableOfContents += `${" ".repeat((depth + 1) * 2)}- [${file}](${relativePath})\n`;
             }
         }
