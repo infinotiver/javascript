@@ -48,6 +48,7 @@ this repository serves as a guide for anyone who wishes to learn javascript them
     - Escapes
         - [01B_escapes.js](Tutorials/Tutorials/Basic/variables/Escapes/01B_escapes.js)
         - [02B_literal_quotes.js](Tutorials/Tutorials/Basic/variables/Escapes/02B_literal_quotes.js)
+
 <!--TOC_END-->
 
 
