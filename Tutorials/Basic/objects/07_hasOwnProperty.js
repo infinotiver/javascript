@@ -11,6 +11,6 @@ var Room = {
 
 console.log(Room.hasOwnProperty("length")) // Output: false
 
-Room.length = 20
+Room.length = 20 // Alternatively, Room['length'] = 20 also works fine
 
 console.log(Room.hasOwnProperty("length")) // Output: true
