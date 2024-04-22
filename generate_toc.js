@@ -1,54 +1,89 @@
+// This JavaScript file is responsible for generating a table of contents (TOC) 
+// for a given directory and inserting it into a README.md file. The TOC 
+// lists the directories and JavaScript files within the given directory.
+
+// Load the built-in 'fs' module to interact with the file system
 const fs = require('fs');
+
+// Load the built-in 'path' module to manipulate file paths
 const path = require('path');
 
+
+// Define a function to generate a table of contents for a given directory
 function generateTableOfContents(directory, depth = 0) {
     // Initialize the table of contents with an empty string
     let tableOfContents = "";
 
+    // Define a helper function to recursively traverse the directory and generate the table of contents
     function traverseDirectory(currentPath, depth) {
+        // Get the files in the current directory
         const files = fs.readdirSync(currentPath);
 
+        // Traverse each file in the directory
         for (const file of files) {
+            // Get the full path of the file
             const filePath = path.join(currentPath, file);
+
+            // Get the stats of the file
             const stats = fs.statSync(filePath);
 
+            // If the file is a directory, generate the table of contents recursively
             if (stats.isDirectory()) {
+                // Capitalize the first letter of the directory name and add it to the table of contents
                 const folderName = file.charAt(0).toUpperCase() + file.slice(1);
                 console.log(`Adding folder to TOC: ${folderName}`);
                 tableOfContents += `${" ".repeat(depth * 2)}- ${folderName}\n`;
+
+                // Recursively traverse the directory
                 traverseDirectory(filePath, depth + 1);
-            } else if (file.endsWith(".js")) {
-                const absolutePath = path.join(directory, filePath);
-                console.log(`Adding JS file to TOC: ${file} - ${absolutePath}`);
-                tableOfContents += `${" ".repeat((depth + 1) * 2)}- [${file}](${absolutePath})\n`;
+            } 
+            // If the file is a JavaScript file, generate a link to it in the table of contents
+            else if (file.endsWith(".js")) {
+                // Get the relative path of the file
+                const relativePath = path.relative(directory, filePath).replace(/\\/g, "/");
+
+                // Add a link to the file in the table of contents
+                console.log(`Adding JS file to TOC: ${file} - ${relativePath}`);
+                tableOfContents += `${" ".repeat((depth + 1) * 2)}- [${file}](${relativePath})\n`;
             }
         }
     }
 
+    // Start traversing the given directory
     traverseDirectory(directory, depth);
 
+    // Return the generated table of contents
     return tableOfContents;
 }
 
+
+// Define the directory to generate the table of contents for
 const directory = 'Tutorials';
+
+// Generate the table of contents
 const tableOfContents = generateTableOfContents(directory);
 
+
+// Define the path to the README.md file
 const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
 console.log(readmePath);
+
+// Read the content of the README.md file
 let readmeContent = fs.readFileSync(readmePath, 'utf8');
-const startMarker = '<!--TOC_START-->'; // Unique marker to indicate the start of the TOC
-const endMarker = '<!--TOC_END-->'; // Unique marker to indicate the end of the TOC
+
+// Define unique markers to indicate the start and end of the TOC in the README content
+const startMarker = '<!--TOC_START-->';
+const endMarker = '<!--TOC_END-->';
 
 // Find the range of the start and end markers in the README content
 const startIndex = readmeContent.indexOf(startMarker);
 const endIndex = readmeContent.indexOf(endMarker);
 
+// If the start and end markers are found, update the content with the generated table of contents
 if (startIndex !== -1 && endIndex !== -1) {
-    // Insert the generated table of contents between the start and end markers
     const updatedContent = readmeContent.slice(0, startIndex) + startMarker + '\n' + tableOfContents + '\n' + endMarker + readmeContent.slice(endIndex + endMarker.length);
 
-
-    // Write the updated content back to the README file using writeFile
+    // Write the updated content back to the README file
     fs.writeFile(readmePath, updatedContent, { encoding: 'utf8' }, (err) => {
         if (err) {
             console.error("Error writing to README file:", err);
@@ -58,6 +93,8 @@ if (startIndex !== -1 && endIndex !== -1) {
             console.log("Changes committed successfully!");
         }
     });
-} else {
+} 
+// If the start or end markers are not found, log an error message
+else {
     console.error("Unable to find the start or end markers in the README content. Update failed.");
 }
