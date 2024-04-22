@@ -22,6 +22,7 @@ this repository serves as a guide for anyone who wishes to learn javascript them
       - [05_bracket_notation.js](Basic/objects/05_bracket_notation.js)
       - [06_delete_properties.js](Basic/objects/06_delete_properties.js)
       - [07_hasOwnProperty.js](Basic/objects/07_hasOwnProperty.js)
+      - [08_challenge.js](Basic/objects/08_challenge.js)
   - Scopes
       - [01_scopes.js](Basic/scopes/01_scopes.js)
       - [02_global_scope.js](Basic/scopes/02_global_scope.js)
