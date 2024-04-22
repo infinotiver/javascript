@@ -14,6 +14,8 @@ this repository serves as a guide for anyone who wishes to learn javascript them
       - [03_return.js](Basic/functions/03_return.js)
       - [04_functions.js](Basic/functions/04_functions.js)
       - [05_multiple_conditions.js](Basic/functions/05_multiple_conditions.js)
+  - [Loops](Basic/loops)
+      - [01_loops.js](Basic/loops/01_loops.js)
   - [Objects](Basic/objects)
       - [01_objects.js](Basic/objects/01_objects.js)
       - [02_exercise.js](Basic/objects/02_exercise.js)
