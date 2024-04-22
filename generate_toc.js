@@ -36,14 +36,16 @@ const tableOfContents = generateTableOfContents(directory);
 const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
 console.log(readmePath);
 let readmeContent = fs.readFileSync(readmePath, 'utf8');
-const tocMarker = '<!-- INSERT_TOC_HERE -->'; // Unique marker to indicate where the TOC should be inserted
+const startMarker = '<!--TOC_START-->'; // Unique marker to indicate the start of the TOC
+const endMarker = '<!--TOC_END-->'; // Unique marker to indicate the end of the TOC
 
-const startIndex = readmeContent.indexOf(tocMarker);
-const endIndex = startIndex + tocMarker.length;
+// Find the range of the start and end markers in the README content
+const startIndex = readmeContent.indexOf(startMarker);
+const endIndex = readmeContent.indexOf(endMarker);
 
 if (startIndex !== -1 && endIndex !== -1) {
-    // Replace the tocMarker with the generated table of contents
-    const updatedContent = readmeContent.slice(0, startIndex) + tableOfContents + readmeContent.slice(endIndex);
+    // Overwrite the content between the start and end markers with the generated table of contents
+    const updatedContent = readmeContent.slice(0, startIndex) + tableOfContents + readmeContent.slice(endIndex + endMarker.length);
 
     // Write the updated content back to the README file using writeFile
     fs.writeFile(readmePath, updatedContent, { encoding: 'utf8' }, (err) => {
@@ -51,8 +53,10 @@ if (startIndex !== -1 && endIndex !== -1) {
             console.error("Error writing to README file:", err);
         } else {
             console.log("README file updated successfully!");
+
+            console.log("Changes committed successfully!");
         }
     });
 } else {
-    console.error("Unable to find the tocMarker in the README content. Update failed.");
+    console.error("Unable to find the start or end markers in the README content. Update failed.");
 }
