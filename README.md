@@ -4,7 +4,7 @@ this repository serves as a guide for anyone who wishes to learn javascript them
 
 # Table of Contents
 *This Table of Contents is generated automatically using a script that can be found [here](generate_toc.js)*
-
+<!--TOC_START-->
 - Basic
   - Conditions
       - [01_basic.js](Tutorials/Tutorials/Basic/conditions/01_basic.js)
@@ -48,6 +48,7 @@ this repository serves as a guide for anyone who wishes to learn javascript them
     - Escapes
         - [01B_escapes.js](Tutorials/Tutorials/Basic/variables/Escapes/01B_escapes.js)
         - [02B_literal_quotes.js](Tutorials/Tutorials/Basic/variables/Escapes/02B_literal_quotes.js)
+<!--TOC_END-->
 
 
 
