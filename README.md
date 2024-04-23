@@ -18,6 +18,7 @@ this repository serves as a guide for anyone who wishes to learn javascript them
       - [01_loops.js](Basic/loops/01_loops.js)
     - [For_loops](Basic/loops/for_loops)
         - [01_for_loops.js](Basic/loops/for_loops/01_for_loops.js)
+        - [02_nested_for_loops.js](Basic/loops/for_loops/02_nested_for_loops.js)
     - [While_loops](Basic/loops/while_loops)
         - [01_while_loops.js](Basic/loops/while_loops/01_while_loops.js)
   - [Objects](Basic/objects)
