@@ -16,6 +16,8 @@ this repository serves as a guide for anyone who wishes to learn javascript them
       - [05_multiple_conditions.js](Basic/functions/05_multiple_conditions.js)
   - [Loops](Basic/loops)
       - [01_loops.js](Basic/loops/01_loops.js)
+    - [For loops](Basic/loops/for loops)
+        - [01_for_loops.js](Basic/loops/for loops/01_for_loops.js)
     - [While loops](Basic/loops/while loops)
         - [01_while_loops.js](Basic/loops/while loops/01_while_loops.js)
   - [Objects](Basic/objects)
