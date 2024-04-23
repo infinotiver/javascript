@@ -38,20 +38,3 @@ for (let i = 0; i < words.length; i++) {
   console.log(`The concatenated string in row ${i + 1} is "${concatenatedString.trim()}"`);
 }
 console.log("-".repeat(cols));
-// Example 3: Iterate over a 2D array of booleans and perform logical operations on them
-const booleans = [
-  [true, false, true],
-  [false, true, false],
-  [true, false, true]
-];
-
-for (let i = 0; i < booleans.length; i++) {
-  let and = true;
-  let or = false;
-  for (let j = 0; j < booleans[i].length; j++) {
-    and = and && booleans[i][j];
-    or = or || booleans[i][j];
-  }
-  console.log(`The logical AND of the booleans in row ${i + 1} is ${and}`);
-  console.log(`The logical OR of the booleans in row ${i + 1} is ${or}`);
-}
