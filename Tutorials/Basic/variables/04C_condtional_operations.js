@@ -12,3 +12,11 @@
 let age = 18;
 let canVote = (age >= 18) ? "Yes" : "No"; // ternary operator
 console.log(canVote)
+
+// Multiple (Nested) Conditional (Ternary) operators
+
+function checkInt (num) {
+    return (num > 0) ? "Positive" : (num < 0) ? "Negative" : "Zero";
+}
+
+console.log(checkInt(0))
