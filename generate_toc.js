@@ -8,7 +8,6 @@ const fs = require('fs');
 // Load the built-in 'path' module to manipulate file paths
 const path = require('path');
 
-
 // Define a function to generate a table of contents for a given directory
 function generateTableOfContents(directory, depth = 0) {
     // Initialize the table of contents with an empty string
@@ -26,22 +25,24 @@ function generateTableOfContents(directory, depth = 0) {
 
             // Get the stats of the file
             const stats = fs.statSync(filePath);
-            const relativePath = path.relative(directory, filePath).replace(/\\/g, "/");
             // If the file is a directory, generate the table of contents recursively
-
+            const prefix = path.relative(directory, currentPath).replace(/\\/g, "/") + "/";
             if (stats.isDirectory()) {
                 // Capitalize the first letter of the directory name and add it to the table of contents
                 const folderName = file.charAt(0).toUpperCase() + file.slice(1);
+                const relativePath = prefix + file;
                 tableOfContents += `${" ".repeat(depth * 2)}- [${folderName}](${relativePath})\n`;
-                traverseDirectory(filePath, depth + 1);
 
                 // Recursively traverse the directory
                 traverseDirectory(filePath, depth + 1);
             } 
             // If the file is a JavaScript file, generate a link to it in the table of contents
             else if (file.endsWith(".js")) {
-                const fileName = path.basename(file, '.js');
-                tableOfContents += `${" ".repeat((depth + 1) * 2)}- [${fileName}](${relativePath})\n`;
+                // Get the relative path of the file
+                const relativePath = prefix + file;
+
+                // Add a link to the file in the table of contents
+                tableOfContents += `${" ".repeat((depth + 1) * 2)}- [${file}](${relativePath})\n`;
             }
         }
     }
@@ -95,3 +96,5 @@ if (startIndex !== -1 && endIndex !== -1) {
 else {
     console.error("Unable to find the start or end markers in the README content. Update failed.");
 }
+
+
