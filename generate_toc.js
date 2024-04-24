@@ -26,24 +26,22 @@ function generateTableOfContents(directory, depth = 0) {
 
             // Get the stats of the file
             const stats = fs.statSync(filePath);
-
+            const relativePath = path.relative(directory, filePath).replace(/\\/g, "/");
             // If the file is a directory, generate the table of contents recursively
+
             if (stats.isDirectory()) {
                 // Capitalize the first letter of the directory name and add it to the table of contents
                 const folderName = file.charAt(0).toUpperCase() + file.slice(1);
-                const relativePath = path.relative(directory, filePath).replace(/\\/g, "/");
                 tableOfContents += `${" ".repeat(depth * 2)}- [${folderName}](${relativePath})\n`;
+                traverseDirectory(filePath, depth + 1);
 
                 // Recursively traverse the directory
                 traverseDirectory(filePath, depth + 1);
             } 
             // If the file is a JavaScript file, generate a link to it in the table of contents
             else if (file.endsWith(".js")) {
-                // Get the relative path of the file
-                const relativePath = path.relative(directory, filePath).replace(/\\/g, "/");
-
-                // Add a link to the file in the table of contents
-                tableOfContents += `${" ".repeat((depth + 1) * 2)}- [${file}](${relativePath})\n`;
+                const fileName = path.basename(file, '.js');
+                tableOfContents += `${" ".repeat((depth + 1) * 2)}- [${fileName}](${relativePath})\n`;
             }
         }
     }
