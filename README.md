@@ -9,10 +9,15 @@ this repository serves as a guide for anyone who wishes to learn javascript them
   - [Conditions](Basic/conditions)
       - [01_basic.js](Basic/conditions/01_basic.js)
   - [Functions](Basic/functions)
-      - [01_everything.js](Basic/functions/01_everything.js)
+      - [01B_functionExpression.js](Basic/functions/01B_functionExpression.js)
+      - [01C_arrowFunction.js](Basic/functions/01C_arrowFunction.js)
+      - [01D_namedFunctionExpression.js](Basic/functions/01D_namedFunctionExpression.js)
+      - [01E_generatorFunction.js](Basic/functions/01E_generatorFunction.js)
+      - [01F_IIFE.js](Basic/functions/01F_IIFE.js)
+      - [01G_recursive_func.js](Basic/functions/01G_recursive_func.js)
+      - [01_functions.js](Basic/functions/01_functions.js)
       - [02_funcs_with_args.js](Basic/functions/02_funcs_with_args.js)
       - [03_return.js](Basic/functions/03_return.js)
-      - [04_functions.js](Basic/functions/04_functions.js)
       - [05_multiple_conditions.js](Basic/functions/05_multiple_conditions.js)
   - [Loops](Basic/loops)
       - [01_loops.js](Basic/loops/01_loops.js)
@@ -64,6 +69,7 @@ this repository serves as a guide for anyone who wishes to learn javascript them
 - [Intermediate](/Intermediate)
   - [Math](Intermediate/Math)
       - [01_basic.js](Intermediate/Math/01_basic.js)
+    - [freezing_objects.js](Intermediate/freezing_objects.js)
 
 <!--TOC_END-->
 
