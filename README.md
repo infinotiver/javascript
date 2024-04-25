@@ -67,9 +67,9 @@ this repository serves as a guide for anyone who wishes to learn javascript them
         - [01B_escapes.js](Basic/variables/Escapes/01B_escapes.js)
         - [02B_literal_quotes.js](Basic/variables/Escapes/02B_literal_quotes.js)
 - [Intermediate](/Intermediate)
+    - [01_freezing_objects.js](Intermediate/01_freezing_objects.js)
   - [Math](Intermediate/Math)
       - [01_basic.js](Intermediate/Math/01_basic.js)
-    - [freezing_objects.js](Intermediate/freezing_objects.js)
 
 <!--TOC_END-->
 
