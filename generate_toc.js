@@ -26,7 +26,7 @@ function generateTableOfContents(directory, depth = 0) {
             // Get the stats of the file
             const stats = fs.statSync(filePath);
             // If the file is a directory, generate the table of contents recursively
-            const prefix = path.relative(directory, currentPath).replace(/\\/g, "/") + "/";
+            const prefix = "Tutorials" + "/";
             if (stats.isDirectory()) {
                 // Capitalize the first letter of the directory name and add it to the table of contents
                 const folderName = file.charAt(0).toUpperCase() + file.slice(1);
