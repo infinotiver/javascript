@@ -70,6 +70,7 @@ This repository is your one-stop shop for learning JavaScript at your own pace. 
     - [01_freezing_objects.js](Tutorials/01_freezing_objects.js)
   - [Math](Tutorials/Math)
       - [01_basic.js](Tutorials/01_basic.js)
+      - [02_floor.js](Tutorials/02_floor.js)
 
 <!--TOC_END-->
 
