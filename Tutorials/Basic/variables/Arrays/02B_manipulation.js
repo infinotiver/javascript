@@ -44,5 +44,5 @@ const fruitsArray = ["apple", "banana"];
 fruitsArray.unshift("kiwi", "grape");
 
 console.log(fruitsArray);
-// TODO SHOW USAGE OF UNSHIFT()
+
 
