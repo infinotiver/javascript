@@ -63,6 +63,8 @@ This repository is your one-stop shop for learning JavaScript at your own pace. 
     - [Arrays](Tutorials/Arrays)
         - [01A_arrays.js](Tutorials/01A_arrays.js)
         - [02B_manipulation.js](Tutorials/02B_manipulation.js)
+    - [Dates](Tutorials/Dates)
+        - [01_dates.js](Tutorials/01_dates.js)
     - [Escapes](Tutorials/Escapes)
         - [01B_escapes.js](Tutorials/01B_escapes.js)
         - [02B_literal_quotes.js](Tutorials/02B_literal_quotes.js)
