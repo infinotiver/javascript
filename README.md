@@ -27,6 +27,7 @@ This repository is your one-stop shop for learning JavaScript at your own pace. 
     - [For_loops](Tutorials/for_loops)
         - [01_for_loops.js](Tutorials/01_for_loops.js)
         - [02_nested_for_loops.js](Tutorials/02_nested_for_loops.js)
+        - [03_isprime.js](Tutorials/03_isprime.js)
     - [While_loops](Tutorials/while_loops)
         - [01_while_loops.js](Tutorials/01_while_loops.js)
   - [Objects](Tutorials/objects)
