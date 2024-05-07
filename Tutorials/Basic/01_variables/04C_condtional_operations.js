@@ -9,9 +9,17 @@
  * Syntax:
  *           variable = (condition) ? TRUE_value: FALSE_value
  */
+
 let age = 18;
 let canVote = (age >= 18) ? "Yes" : "No"; // ternary operator
 console.log(canVote)
+
+// Another Example
+
+let speed = 90; 
+// let speed = 50;
+let overSpeeding = (speed >=80 ) ? true: false
+console.log(overSpeeding)
 
 // Multiple (Nested) Conditional (Ternary) operators
 
