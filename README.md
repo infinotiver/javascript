@@ -2,8 +2,8 @@
 
 This repository is your one-stop shop for learning JavaScript at your own pace. It includes all my JavaScript files, along with a special "Tutorials" folder that's constantly growing as I explore new concepts.
 
-# Table of Contents
-*This Table of Contents is generated automatically using a script that can be found [here](generate_toc.js)*
+# Tutorials
+*This Table of Contents for the `Tutorials` is generated automatically using a script that can be found [here](generate_toc.js)*
 <!--TOC_START-->
 - [Basic](Tutorials/Basic)
   - [Conditions](Tutorials/conditions)
