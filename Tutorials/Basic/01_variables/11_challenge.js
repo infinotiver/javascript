@@ -1,7 +1,8 @@
 // 11_challenge.js
 
 /*
-Challenge: Compound Variables Calculator
+
+Challenge 1 : Compound Variables Calculator
 
 Objective: Create a program that uses all types of variables (number, string, boolean) and performs compound assignment operations on them.
 
@@ -14,35 +15,63 @@ Instructions:
 Files to Reference: 01A_compound_assignment.js, 01_variables.js, 02_declare_intialize.js, 03_string_vars.js
 */
 
-let myNum = 20;
-let myStr = "Hello";
-let myBool = false;
-
 // Number operations
+let myNum = 20;
 
-myNum += 5; 
-console.log(myNum) // Output : 25
+myNum += 5; // add 5 to myNum
+console.log(myNum); // Output: 25
 
-myNum -= 3; 
-console.log(myNum) // Output: 22
+myNum -= 3; // subtract 3 from myNum
+console.log(myNum); // Output: 22
 
-myNum *= 2; 
-console.log(myNum) // Output: 44
+myNum *= 2; // multiply myNum by 2
+console.log(myNum); // Output: 44
 
-myNum /= 4; 
-console.log(myNum) // Output: 11
+myNum /= 4; // divide myNum by 4
+console.log(myNum); // Output: 11
 
-myNum %= 4; 
-console.log(myNum) // Output: 3
+myNum %= 4; // get the remainder of myNum divided by 4
+console.log(myNum); // Output: 3
 
 // String operations
-
-myStr += " World";
-console.log(myStr)
+let myStr = "Hello";
+myStr += " World"; // concatenate myStr with " World"
+console.log(myStr);
 
 // Boolean operations
-myBool &&= false;        
+let myBool = false;
+
+myBool &&= false; // logical AND operation
 console.log("After &&= false, bool:", myBool); // Output: false
 
-myBool ||= true;        
+myBool ||= true; // logical OR operation
 console.log("After ||= true, bool:", myBool); // Output: true
+
+
+/*
+Challenge 2 : Check if Number is a Palindrome
+
+Objective: Write a program that takes a number as input and checks if it is a palindrome (a number that reads the same forwards and backwards).
+
+Instructions:
+
+- Write a function that takes a number as input and checks if it is a palindrome.
+- Use the function to check if a number is a palindrome.
+- Print the result to the console.
+
+Files to Reference: 01A_compound_assignment.js, 01_variables.js, 02_declare_intialize.js, 03_string_vars.js
+*/
+
+function checkIfPalindrome(num) {
+    let str = num.toString();
+    let reversedStr = str.split("").reverse().join("");
+
+    if (str === reversedStr) {
+        return true;
+    }
+    else if (str !== reversedStr) {
+        return false;
+    }
+}
+
+console.log(checkIfPalindrome(161)); // Output: true
