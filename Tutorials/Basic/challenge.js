@@ -69,4 +69,45 @@ function FrequencyCount(str) {
     }
 }
 
-FrequencyCount("People hate cheese.")
+FrequencyCount("People hate cheese")
+
+/*
+Challenge 3:  Write a program that takes a string as input and checks if it is a valid parentheses string. A valid parentheses string is one where every opening parenthesis ( has a corresponding closing parenthesis ), and every closing parenthesis ) has a corresponding opening parenthesis (. The program should also calculate the length of the longest valid parentheses substring in the string and print it out.
+*/
+
+
+
+function findLongestValidParentheses(s) {
+    let maxLen = 0; // Maximum length of valid parentheses substring
+    let validParenthesesCount = 0; // Count of valid parentheses pairs
+    let stack = [-1]; // Stack to store indices, initialize with -1 for base calculation
+
+    for (let i = 0; i < s.length; di++) {
+        if (s[i] === '(') {
+            stack.push(i); // Push the index of '(' onto the stack
+        } else if (s[i] === ')') {
+            if (stack.length > 1 && s[stack[stack.length - 1]] === '(') {
+                stack.pop(); // Pop the matching '(' index from the stack
+
+                // Calculate the length of the current valid substring
+                let currentLen = i - stack[stack.length - 1];
+                maxLen = Math.max(maxLen, currentLen);
+
+                // Increment valid parentheses count for each valid pair
+                validParenthesesCount++;
+            } else {
+                stack.push(i); // Push the current index as the base for next valid substring
+            }
+        }
+    }
+
+    return {
+        longestValidLength: maxLen,
+        validParenthesesCount: validParenthesesCount
+    };
+}
+
+// Example usage
+const input = "a-b(a+b)"; // Sample input string
+const result = findLongestValidParentheses(input); // Call the function with the input string
+console.log(result)
