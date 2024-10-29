@@ -9,8 +9,8 @@ var Room = {
     height: 15,
 }
 
-console.log(Room.hasOwnProperty("length")) // Output: false
+console.log(Object.prototype.hasOwnProperty.call(Room, 'length')) // Output: false
 
 Room.length = 20 // Alternatively, Room['length'] = 20 also works fine
 
-console.log(Room.hasOwnProperty("length")) // Output: true
+console.log(Object.prototype.hasOwnProperty.call(Room, 'length')) // Output: true

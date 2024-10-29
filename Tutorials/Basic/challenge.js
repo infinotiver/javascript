@@ -18,7 +18,7 @@ function countVowelsAndConsonants(str) {
    let digit_count = 0;
    let digit_sum = 0
 
-   for(var i = 0; i <= str.length; i++) {
+   for(var i = 0; i < str.length; i++) {
     if(vowels.includes(str[i])) {
         vowel_count++
     }
