@@ -5,6 +5,9 @@ A switch statement in JavaScript is used to perform different actions based on d
 let fruit = 'Apple';
 
 switch(fruit) {
+  default:
+    console.log('I don\'t know this fruit');
+    break;
   case 'Banana':
     console.log('Banana is a yellow fruit');
     break;
