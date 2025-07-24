@@ -12,9 +12,10 @@ const path = require('path');
 function generateTableOfContents(directory, depth = 0) {
     // Initialize the table of contents with an empty string
     let tableOfContents = "";
+    const jsonTOC = [];
 
     // Define a helper function to recursively traverse the directory and generate the table of contents
-    function traverseDirectory(currentPath, depth) {
+    function traverseDirectory(currentPath, depth, jsonParent) {
         // Get the files in the current directory
         const files = fs.readdirSync(currentPath);
 
@@ -33,8 +34,11 @@ function generateTableOfContents(directory, depth = 0) {
                 const relativePath = prefix + file;
                 tableOfContents += `${" ".repeat(depth * 2)}- [${folderName}](${relativePath})\n`;
 
+                const folderEntry = { name: folderName, path: relativePath, children: [] };
+                jsonParent.push(folderEntry);
+
                 // Recursively traverse the directory
-                traverseDirectory(filePath, depth + 1);
+                traverseDirectory(filePath, depth + 1, folderEntry.children);
             } 
             // If the file is a JavaScript file, generate a link to it in the table of contents
             else if (file.endsWith(".js")) {
@@ -43,24 +47,24 @@ function generateTableOfContents(directory, depth = 0) {
 
                 // Add a link to the file in the table of contents
                 tableOfContents += `${" ".repeat((depth + 1) * 2)}- [${file}](${relativePath})\n`;
+
+                jsonParent.push({ name: file, path: relativePath });
             }
         }
     }
 
     // Start traversing the given directory
-    traverseDirectory(directory, depth);
+    traverseDirectory(directory, depth, jsonTOC);
 
-    // Return the generated table of contents
-    return tableOfContents;
+    // Return the generated table of contents and JSON structure
+    return { tableOfContents, jsonTOC };
 }
-
 
 // Define the directory to generate the table of contents for
 const directory = 'Tutorials';
 
 // Generate the table of contents
-const tableOfContents = generateTableOfContents(directory);
-
+const { tableOfContents, jsonTOC } = generateTableOfContents(directory);
 
 // Define the path to the README.md file
 const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
@@ -87,8 +91,6 @@ if (startIndex !== -1 && endIndex !== -1) {
             console.error("Error writing to README file:", err);
         } else {
             console.log("README file updated successfully!");
-
-            console.log("Changes committed successfully!");
         }
     });
 } 
@@ -97,4 +99,12 @@ else {
     console.error("Unable to find the start or end markers in the README content. Update failed.");
 }
 
-
+// Write the JSON TOC to a file
+const jsonPath = path.join(process.env.GITHUB_WORKSPACE, 'toc.json');
+fs.writeFile(jsonPath, JSON.stringify(jsonTOC, null, 2), { encoding: 'utf8' }, (err) => {
+    if (err) {
+        console.error("Error writing TOC JSON file:", err);
+    } else {
+        console.log("TOC JSON file created successfully!");
+    }
+});
