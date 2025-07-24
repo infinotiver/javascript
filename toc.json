@@ -1,0 +1,387 @@
+[
+  {
+    "name": "Basic",
+    "path": "Tutorials/Basic",
+    "children": [
+      {
+        "name": "01_variables",
+        "path": "Tutorials/01_variables",
+        "children": [
+          {
+            "name": "01A_compound_assignment.js",
+            "path": "Tutorials/01A_compound_assignment.js"
+          },
+          {
+            "name": "01_variables.js",
+            "path": "Tutorials/01_variables.js"
+          },
+          {
+            "name": "02_declare_intialize.js",
+            "path": "Tutorials/02_declare_intialize.js"
+          },
+          {
+            "name": "03_string_vars.js",
+            "path": "Tutorials/03_string_vars.js"
+          },
+          {
+            "name": "04A_logical_operations.js",
+            "path": "Tutorials/04A_logical_operations.js"
+          },
+          {
+            "name": "04B_relational_operations.js",
+            "path": "Tutorials/04B_relational_operations.js"
+          },
+          {
+            "name": "04C_condtional_operations.js",
+            "path": "Tutorials/04C_condtional_operations.js"
+          },
+          {
+            "name": "04D_bitwise_operations.js",
+            "path": "Tutorials/04D_bitwise_operations.js"
+          },
+          {
+            "name": "04_operations.js",
+            "path": "Tutorials/04_operations.js"
+          },
+          {
+            "name": "05_increment.js",
+            "path": "Tutorials/05_increment.js"
+          },
+          {
+            "name": "06_decrement.js",
+            "path": "Tutorials/06_decrement.js"
+          },
+          {
+            "name": "07_indexing.js",
+            "path": "Tutorials/07_indexing.js"
+          },
+          {
+            "name": "08_typeof.js",
+            "path": "Tutorials/08_typeof.js"
+          },
+          {
+            "name": "09_type_conversion.js",
+            "path": "Tutorials/09_type_conversion.js"
+          },
+          {
+            "name": "10_order_of_precedence.js",
+            "path": "Tutorials/10_order_of_precedence.js"
+          },
+          {
+            "name": "11_challenge.js",
+            "path": "Tutorials/11_challenge.js"
+          },
+          {
+            "name": "Arrays",
+            "path": "Tutorials/Arrays",
+            "children": [
+              {
+                "name": "01A_arrays.js",
+                "path": "Tutorials/01A_arrays.js"
+              },
+              {
+                "name": "02B_manipulation.js",
+                "path": "Tutorials/02B_manipulation.js"
+              },
+              {
+                "name": "03_methods.js",
+                "path": "Tutorials/03_methods.js"
+              }
+            ]
+          },
+          {
+            "name": "Dates",
+            "path": "Tutorials/Dates",
+            "children": [
+              {
+                "name": "01_dates.js",
+                "path": "Tutorials/01_dates.js"
+              }
+            ]
+          },
+          {
+            "name": "Escapes",
+            "path": "Tutorials/Escapes",
+            "children": [
+              {
+                "name": "01B_escapes.js",
+                "path": "Tutorials/01B_escapes.js"
+              },
+              {
+                "name": "02B_literal_quotes.js",
+                "path": "Tutorials/02B_literal_quotes.js"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "02_scopes",
+        "path": "Tutorials/02_scopes",
+        "children": [
+          {
+            "name": "01_scopes.js",
+            "path": "Tutorials/01_scopes.js"
+          },
+          {
+            "name": "02_global_scope.js",
+            "path": "Tutorials/02_global_scope.js"
+          },
+          {
+            "name": "03_local_scope.js",
+            "path": "Tutorials/03_local_scope.js"
+          }
+        ]
+      },
+      {
+        "name": "03_functions",
+        "path": "Tutorials/03_functions",
+        "children": [
+          {
+            "name": "01B_functionExpression.js",
+            "path": "Tutorials/01B_functionExpression.js"
+          },
+          {
+            "name": "01C_arrowFunction.js",
+            "path": "Tutorials/01C_arrowFunction.js"
+          },
+          {
+            "name": "01D_namedFunctionExpression.js",
+            "path": "Tutorials/01D_namedFunctionExpression.js"
+          },
+          {
+            "name": "01E_generatorFunction.js",
+            "path": "Tutorials/01E_generatorFunction.js"
+          },
+          {
+            "name": "01F_IIFE.js",
+            "path": "Tutorials/01F_IIFE.js"
+          },
+          {
+            "name": "01G_recursive_func.js",
+            "path": "Tutorials/01G_recursive_func.js"
+          },
+          {
+            "name": "01_functions.js",
+            "path": "Tutorials/01_functions.js"
+          },
+          {
+            "name": "02_funcs_with_args.js",
+            "path": "Tutorials/02_funcs_with_args.js"
+          },
+          {
+            "name": "03_return.js",
+            "path": "Tutorials/03_return.js"
+          },
+          {
+            "name": "05_multiple_conditions.js",
+            "path": "Tutorials/05_multiple_conditions.js"
+          }
+        ]
+      },
+      {
+        "name": "04_conditions",
+        "path": "Tutorials/04_conditions",
+        "children": [
+          {
+            "name": "01_basic.js",
+            "path": "Tutorials/01_basic.js"
+          }
+        ]
+      },
+      {
+        "name": "05_loops",
+        "path": "Tutorials/05_loops",
+        "children": [
+          {
+            "name": "01_loops.js",
+            "path": "Tutorials/01_loops.js"
+          },
+          {
+            "name": "Do_while_loops",
+            "path": "Tutorials/do_while_loops",
+            "children": [
+              {
+                "name": "01_do_while_loops.js",
+                "path": "Tutorials/01_do_while_loops.js"
+              },
+              {
+                "name": "02_difference.js",
+                "path": "Tutorials/02_difference.js"
+              }
+            ]
+          },
+          {
+            "name": "For_loops",
+            "path": "Tutorials/for_loops",
+            "children": [
+              {
+                "name": "01_for_loops.js",
+                "path": "Tutorials/01_for_loops.js"
+              },
+              {
+                "name": "02_nested_for_loops.js",
+                "path": "Tutorials/02_nested_for_loops.js"
+              },
+              {
+                "name": "03_isprime.js",
+                "path": "Tutorials/03_isprime.js"
+              }
+            ]
+          },
+          {
+            "name": "While_loops",
+            "path": "Tutorials/while_loops",
+            "children": [
+              {
+                "name": "01_while_loops.js",
+                "path": "Tutorials/01_while_loops.js"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "06_switch",
+        "path": "Tutorials/06_switch",
+        "children": [
+          {
+            "name": "01_switch_statements.js",
+            "path": "Tutorials/01_switch_statements.js"
+          },
+          {
+            "name": "02_default.js",
+            "path": "Tutorials/02_default.js"
+          }
+        ]
+      },
+      {
+        "name": "07_objects",
+        "path": "Tutorials/07_objects",
+        "children": [
+          {
+            "name": "01_objects.js",
+            "path": "Tutorials/01_objects.js"
+          },
+          {
+            "name": "02_exercise.js",
+            "path": "Tutorials/02_exercise.js"
+          },
+          {
+            "name": "03_declaring_objects.js",
+            "path": "Tutorials/03_declaring_objects.js"
+          },
+          {
+            "name": "04_dot_notation.js",
+            "path": "Tutorials/04_dot_notation.js"
+          },
+          {
+            "name": "05_bracket_notation.js",
+            "path": "Tutorials/05_bracket_notation.js"
+          },
+          {
+            "name": "06_delete_properties.js",
+            "path": "Tutorials/06_delete_properties.js"
+          },
+          {
+            "name": "07_hasOwnProperty.js",
+            "path": "Tutorials/07_hasOwnProperty.js"
+          },
+          {
+            "name": "08_challenge.js",
+            "path": "Tutorials/08_challenge.js"
+          }
+        ]
+      },
+      {
+        "name": "challenge.js",
+        "path": "Tutorials/challenge.js"
+      }
+    ]
+  },
+  {
+    "name": "Intermediate",
+    "path": "Tutorials/Intermediate",
+    "children": [
+      {
+        "name": "01_freezing_objects.js",
+        "path": "Tutorials/01_freezing_objects.js"
+      },
+      {
+        "name": "Math",
+        "path": "Tutorials/Math",
+        "children": [
+          {
+            "name": "01_basic.js",
+            "path": "Tutorials/01_basic.js"
+          },
+          {
+            "name": "02_floor.js",
+            "path": "Tutorials/02_floor.js"
+          },
+          {
+            "name": "03_round.js",
+            "path": "Tutorials/03_round.js"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "React",
+    "path": "Tutorials/React",
+    "children": [
+      {
+        "name": "01_password_validator",
+        "path": "Tutorials/01_password_validator",
+        "children": [
+          {
+            "name": "eslint.config.js",
+            "path": "Tutorials/eslint.config.js"
+          },
+          {
+            "name": "Src",
+            "path": "Tutorials/src",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "02_simpli-quiz",
+        "path": "Tutorials/02_simpli-quiz",
+        "children": [
+          {
+            "name": "eslint.config.js",
+            "path": "Tutorials/eslint.config.js"
+          },
+          {
+            "name": "Src",
+            "path": "Tutorials/src",
+            "children": [
+              {
+                "name": "Components",
+                "path": "Tutorials/components",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "03_simpli-blog",
+        "path": "Tutorials/03_simpli-blog",
+        "children": [
+          {
+            "name": "eslint.config.js",
+            "path": "Tutorials/eslint.config.js"
+          },
+          {
+            "name": "Src",
+            "path": "Tutorials/src",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]
