@@ -79,6 +79,19 @@ This repository is your one-stop shop for learning JavaScript at your own pace. 
       - [01_basic.js](Tutorials/01_basic.js)
       - [02_floor.js](Tutorials/02_floor.js)
       - [03_round.js](Tutorials/03_round.js)
+- [React](Tutorials/React)
+  - [01_password_validator](Tutorials/01_password_validator)
+      - [eslint.config.js](Tutorials/eslint.config.js)
+    - [Src](Tutorials/src)
+  - [02_simpli-quiz](Tutorials/02_simpli-quiz)
+      - [eslint.config.js](Tutorials/eslint.config.js)
+    - [Src](Tutorials/src)
+      - [Components](Tutorials/components)
+  - [03_simpli-blog](Tutorials/03_simpli-blog)
+      - [eslint.config.js](Tutorials/eslint.config.js)
+    - [Public](Tutorials/public)
+    - [Src](Tutorials/src)
+      - [Assets](Tutorials/assets)
 
 <!--TOC_END-->
 
