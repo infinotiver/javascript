@@ -26,5 +26,6 @@ jobs:
           git config --local user.email "88645086+infinotiver@users.noreply.github.com"
           git config --local user.name "infinotiver"
           git add README.md
+          git add toc.json
           git commit -m "(Automated) Update table of contents in README"
           git push
