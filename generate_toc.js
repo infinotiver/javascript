@@ -39,12 +39,6 @@ function generateTableOfContents(directory, depth = 0, basePath = '') {
     return tableOfContents;
 }
 
-// Usage remains the same
-const directory = 'Tutorials';
-const tableOfContents = generateTableOfContents(directory);
-
-
-
 // Define the directory to generate the table of contents for
 const directory = 'Tutorials';
 
