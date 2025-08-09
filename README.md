@@ -90,6 +90,9 @@ This repository is your one-stop shop for learning JavaScript at your own pace. 
   - [03_simpli-blog](Tutorials/React/03_simpli-blog)
       - [eslint.config.js](Tutorials/React/03_simpli-blog/eslint.config.js)
     - [Src](Tutorials/React/03_simpli-blog/src)
+      - [Components](Tutorials/React/03_simpli-blog/src/components)
+      - [Pages](Tutorials/React/03_simpli-blog/src/pages)
+      - [Utils](Tutorials/React/03_simpli-blog/src/utils)
 
 <!--TOC_END-->
 
