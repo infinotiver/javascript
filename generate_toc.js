@@ -43,7 +43,7 @@ function generateTableOfContents(directory, depth = 0, basePath = '') {
 const directory = 'Tutorials';
 
 // Generate the table of contents
-const tableOfContents = generateTableOfContents(directory);
+const tableOfContents = generateTableOfContents(directory, 0, 'Tutorials');
 
 
 // Define the path to the README.md file
